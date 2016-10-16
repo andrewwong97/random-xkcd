@@ -18,6 +18,7 @@ h2 {
 #target {
 	display: block;
 	padding: 15px 0px;
+	margin: 0 auto;
 }
 
 a {

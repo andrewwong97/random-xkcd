@@ -9,17 +9,25 @@ function getRandomInt(min, max) {
 var setUrls = function() {
 	var rand = getRandomInt(0, 1746);
 	var url = "http://www.xkcd.com/" + rand;
-	$.get(url, function(data) {
-		var page = document.createElement("html");
-		page.innerHTML = data;
-		var image = page.getElementsByTagName("img")[1].src;
-		var start = image.indexOf("chrome-extension://") + 19;
-		var result = "http://" + image.substring(start);
-		document.getElementById("target").src = result;
-	});
 
+	// Set Permalink
 	document.getElementById("permalink").href = url;
 	document.getElementById("permalink").innerHTML = "Permalink: " + url;
+
+	$.get(url, function(data) {
+		// Set Image
+		var page = document.createElement("html");
+		page.innerHTML = data;
+
+		var comic = page.getElementsByTagName("img")[1];
+		var image = comic.src;
+		var result = "http://" + image.substring(image.indexOf("chrome-extension://") + 19);
+		document.getElementById("target").src = result;
+
+		// Set Title and Caption
+		document.getElementById("title").innerHTML = comic.alt;
+		document.getElementById("caption").innerHTML = comic.title;
+	});
 };
 
 
