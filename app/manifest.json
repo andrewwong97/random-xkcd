@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "New Tab XKCD",
+  "description": "Show a random XKCD comic every time you create a new tab. 
+  Includes share button.",
+  "version": "1.0",
+  "permissions": [
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["background.js", "jquery-3.1.1.min.js"]
+  },
+  "browser_action": {
+    "default_title": "New XKCD"
+  },
+  "permissions": ["<all_urls>"]
+}

@@ -1,0 +1,36 @@
+body {
+	background-color: #d7e3f7;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+#img-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	max-height: 600px;
+}
+
+#target {
+	display: block;
+	padding: 15px 0px;
+}
+
+a {
+	text-decoration: none;
+	color: #06347f;
+	transition: color .2s ease-out;
+	font-size: 14px;
+}
+
+a:hover {
+	color: #5f8fe2;
+}
+
+#copy {
+	margin-left: 10px;
+}
